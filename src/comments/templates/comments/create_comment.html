@@ -2,16 +2,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Add Comment</h1>
+    <h1>Products</h1>
+    <p>
+       <h2><b>{{ product.name }}</b></h2>
+       <img src="{{ product.image.url }}" alt="{{ product.name }}"><br>
+    </p>
+    <p>
+        <h2>Synopsis</h2>
+        {{ product.synopsis }}<br><br>
+        <b> tags: {{ product.tags }}</b>
+        {{ profile.user }}<br> 
+    </p>
+    <h4>add comments</h4>
     <form method="post" action="/comments/products/{{ product }}/comments/create/">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Add Comment </button>
     </form>
 
-    <p>
-        {{product.name}}
-    </p>
-
-    img src="{{ product.image.url }}"
+    <!-- img src="{{ product.image.url }}" -->
 {% endblock %}
