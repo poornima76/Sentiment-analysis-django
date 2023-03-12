@@ -6,6 +6,12 @@
     <form method="post" action="/comments/products/{{ product }}/comments/create/">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Add Comment
+        <button type="submit">Add Comment </button>
     </form>
+
+    <p>
+        {{product.name}}
+    </p>
+
+    img src="{{ product.image.url }}"
 {% endblock %}

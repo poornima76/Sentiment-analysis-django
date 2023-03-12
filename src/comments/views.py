@@ -31,7 +31,7 @@ def create_comment(request, product_id):
             return HttpResponse(messages.success(request, 'Comment added successfully'))
     else:
         form = CommentForm()
-    return render(request, 'comments/create_comment.html', {'form': form, 'product': product_id})
+    return render(request, 'comments/create_comment.html', {'form': form, 'product': product})
 
 def delete_comment(request, comment_id):
     comment = Comment.objects.get(id=comment_id)
