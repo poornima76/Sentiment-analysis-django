@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pie Chart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <h1>Comments by Author</h1>
+    <div id="pie-chart"></div>
+    <script>
+        var authors = [];
+        var counts = [];
+        {% for comment in comments %}
+            authors.push("{{ comment.profile }}");
+            counts.push("{{ comment.profile.comment_set.count }}");
+
+        {% endfor %}
+
+        var data = [{
+            values: counts,
+            labels: authors,
+            type: 'pie'
+        }];
+
+        Plotly.newPlot('pie-chart', data);
+    </script>
+</body>
+
+</html>
