@@ -3,8 +3,7 @@ from . import views
 app_name = 'comments'
 urlpatterns = [
     path('products/<int:product_id>/comments/create/', views.create_comment, name='create_comment'),
-    path('comments/<int:comment_id>/delete/', views.delete_comment, name='delete_comment'),
-    path('comments/<int:comment_id>/delete/', views.pie_chart_view, name='disp_pie_chart'), 
+    path('comments/<int:comment_id>/delete/', views.delete_comment, name='delete_comment'), 
 ]
 
 

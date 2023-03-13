@@ -42,29 +42,9 @@ def delete_comment(request, comment_id):
     else:
         messages.error(request, 'You do not have permission to delete this comment')
     return redirect('product_detail', product_id=comment.product.id)
+def predicting_for_pie_chart():
+    pass
 
-def pie_chart_view(request, product_id):
-    comments = Comment.objects.all()
-    # count number of comments per author
-    product = Product.objects.get(pk= int(product_id))
-    profile = Profile.objects.get(pk=2)
-    comment.product = product
-    comment.profile = profile
 
-    authors = {}
-    for comment in comments:
-        if comment.profile in authors:
-            authors[comment.profile] += 1
-        else:
-            authors[comment.profile] = 1
-
-    # generate pie chart
-    labels = list(authors.keys())
-    values = list(authors.values())
-    plt.pie(values, labels=labels)
-    plt.title('Comments by Author')
-    plt.show()
-
-    return render(request, 'pie_chart.html', {'comments': comments})
 # id=product_id
 #pk=1
