@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
           </li>
           <li class="nav-item">
   
@@ -48,12 +48,10 @@
       </div>
     </div>
   </nav>
-<body>
-    <nav>
-        
-        {{ product }}
-    </nav>
-    {% block content %}
-    {% endblock %}
-</body>
+  <section class="banner">
+    <div class="text-center txt-1 fw-bolder ">
+      <h1>CRITIC<small>A</small>NIME</h1>
+      <h5>the anime reviewer</h5>
+    </div>
+  </section>
 </html>

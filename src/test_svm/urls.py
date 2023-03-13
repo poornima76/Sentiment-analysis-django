@@ -19,14 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from comments import views
 from test_svm import views
-from products import views 
+
+# from products import views 
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.homepage, name='homepage'),
     path('admin/', admin.site.urls),
     path('comments/', include('comments.urls')),
-    path('products/', include('products.urls')),
-    
+    # path('products/', include('products.urls')),    
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
