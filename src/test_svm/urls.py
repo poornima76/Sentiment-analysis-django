@@ -18,12 +18,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from comments import views
-from test_svm import views
+from products import views
+
 
 # from products import views 
 
 urlpatterns = [
-    path('', views.homepage, name='homepage'),
+    # path('', views.homepage, name='homepage'),
     path('admin/', admin.site.urls),
     path('comments/', include('comments.urls')),
     # path('products/', include('products.urls')),    

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+
 
 {% block content %}
     <h1>{{ product.name }}</h1>
@@ -13,7 +13,7 @@
     
     <h2>Add a comment</h2>
     {% if request.user.is_authenticated %}
-        <form method="post" action="{% url 'add_comment' product.id %}">
+        <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Submit</button>
@@ -21,4 +21,5 @@
     {% else %}
         <p>You must be logged in to add a comment.</p>
         <a href="{% url 'login' %}">Log in</a>
-   
+    {% endif %}
+{% endblock %}

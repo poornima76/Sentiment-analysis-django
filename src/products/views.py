@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from comments.models import Comment
+from products.models import Product
+
 # Create your views here.
-def product_detail(request, product_id):
-    comments = Comment.objects.filter(product_id=product_id)
-    return render(request, 'products/detail.html', {'comments':comments})
+
+def product_details(request):
+    product = Product.objects.all()
+    return render(request, 'products/product_list.html', {'product':product })
+
+

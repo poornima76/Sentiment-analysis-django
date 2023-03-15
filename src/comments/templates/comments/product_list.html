@@ -1,0 +1,41 @@
+<!-- products/list.html -->
+{% extends 'navbar.html' %}
+{% load static %}
+{% block header %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="{% static 'css/desc-1.css' %}">
+    {% endblock %}
+{% block content %}
+
+   
+
+<section>  
+    <div class="container cont py-5">  
+      <h3 >Anime</h3>   
+      <div class="owl-carousel">
+        {% for item in product %}
+        <div class="w "> 
+            <a href= {% url 'comments:create_comment' item.pk  %}>
+              <img  src="{{ item.image.url }}">
+             <p class="desc">{{ item.name }}</p>
+            </a>
+        </div>
+        {% endfor %}
+      </div>
+     
+     </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $(".owl-carousel").owlCarousel(
+              {
+                  items:4,
+                  nav:true
+              }
+          );
+      });
+  </script>
+
+{% endblock %}
