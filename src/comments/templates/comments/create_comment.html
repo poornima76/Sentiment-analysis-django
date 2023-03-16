@@ -63,7 +63,7 @@
           <h4>add comments</h4>
           {% for c in comment %}
           <img src="{{ c.profile.avatar.url }}" alt="" class="usr-img">
-          <p>{{ c.profile.user.username }}
+          <p>{{ c.profile.user.username }}:<br>
               {{ c.text }}</p>
             {% endfor %} 
           </p>
